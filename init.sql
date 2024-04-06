@@ -1,0 +1,3 @@
+CREATE DATABASE weatherStation;
+CREATE USER akash.b WITH PASSWORD '';
+GRANT ALL PRIVILEGES ON DATABASE weatherStation TO akash.b;

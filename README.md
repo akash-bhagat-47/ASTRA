@@ -46,3 +46,14 @@ curl -X POST http://localhost:8080/ingest \
     "humidity": 60,
     "timestamp": "2024-04-06T14:30:00Z"
 }'
+
+
+
+
+DOCKER
+
+command to build image : 
+docker build -t <your-image-name> .
+
+command to run as container :
+docker run -p 8080:8080 <your-image-name>
