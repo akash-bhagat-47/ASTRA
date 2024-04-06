@@ -3,6 +3,7 @@ package main
 import (
 	db "ASTRA/src/database"
 	"ASTRA/src/handlers"
+	"ASTRA/src/watcher"
 	"log"
 
 	"github.com/labstack/echo"
@@ -10,6 +11,7 @@ import (
 
 func init() {
 	db.InitDB()
+	go watcher.MonitorFiles()
 }
 
 func main() {
