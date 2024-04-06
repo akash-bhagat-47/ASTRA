@@ -1,8 +1,11 @@
 package main
 
 import (
+	db "ASTRA/src/database"
+	"ASTRA/src/handlers"
 	"log"
-	"net/http"
+
+	"github.com/labstack/echo"
 )
 
 func init() {
@@ -10,18 +13,9 @@ func init() {
 }
 
 func main() {
-	//http.HandleFunc("/post-data", handlePost)
+	e := echo.New()
+	e.POST("/ingest", handlers.IngestData)
 
-	// Start HTTP server
 	log.Println("Server listening on :8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(e.Start(":8080"))
 }
-
-// curl -X POST http://localhost:8080/albums/add \
-// -H "Content-Type: application/json" \
-// -d '{
-//     "city": "Jaipur",
-//     "temp": 35.5,
-//     "humidity": 60,
-//     "timestamp": "2024-04-06T14:30:00Z"
-// }'
